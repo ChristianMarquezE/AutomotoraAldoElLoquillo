@@ -75,18 +75,111 @@
     <link rel="manifest" href="/./assets/icons/site.webmanifest" />
     <!-- Fin de Iconos -->
 
+    <!-- Librería de iconos para el Chatbot -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
       /* Aplicamos la fuente Inter como base */
       body {
         font-family: "Inter", sans-serif;
       }
-      /* Un pequeño truco para el fondo del Hero */
+      /* Fondo del Hero */
       .hero-bg {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
           ),
           url("https://raw.githubusercontent.com/ChristianMarquezE/AutomotoraAldoElLoquillo/refs/heads/master/assets/HERO.png");
+      }
+
+      /* ============================================================
+      ESTILOS DEL ASISTENTE VIRTUAL (CHATBOT)
+      ============================================================ */
+      .chat-bubble {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: #2563eb; /* bg-blue-600 */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+      }
+      .chat-bubble:hover {
+        transform: scale(1.1);
+      }
+
+      .chat-window {
+        position: fixed;
+        bottom: 7rem;
+        right: 2rem;
+        width: 350px;
+        height: 450px;
+        background-color: white;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        /* Oculto por defecto */
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .chat-window.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .chat-header {
+        background-color: #2563eb; /* bg-blue-600 */
+        color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chat-log {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem; /* space-y-3 */
+      }
+
+      .chat-message-bot,
+      .chat-message-user {
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        max-width: 80%;
+      }
+
+      .chat-message-bot {
+        background-color: #f3f4f6; /* bg-gray-100 */
+        color: #1f2937; /* text-gray-800 */
+        align-self: flex-start;
+      }
+
+      .chat-message-user {
+        background-color: #2563eb; /* bg-blue-600 */
+        color: white;
+        align-self: flex-end;
+      }
+
+      .chat-input {
+        display: flex;
+        border-top: 1px solid #e5e7eb; /* border-gray-200 */
+        padding: 0.5rem;
       }
     </style>
   </head>
@@ -100,6 +193,42 @@
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
+        <div>
+          <!-- FÁCIL DE EDITAR: Este es el logo/título -->
+          <a
+            href="#inicio"
+            class="text-2xl font-bold text-gray-900 hover:text-blue-600"
+          >
+            Aldo el <span class="text-blue-600">Loquillo</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a
+            href="#inicio"
+            class="text-gray-600 hover:text-blue-600 font-medium"
+            >Inicio</a
+          >
+          <a
+            href="#nosotros"
+            class="text-gray-600 hover:text-blue-600 font-medium"
+            >El Loquillo</a
+          >
+          <a
+            href="#vehiculos"
+            class="text-gray-600 hover:text-blue-600 font-medium"
+            >Vehículos</a
+          >
+          <a
+            href="#servicios"
+            class="text-gray-600 hover:text-blue-600 font-medium"
+            >Servicios</a
+          >
+          <a
+            href="#contacto"
+            class="text-gray-600 hover:text-blue-600 font-medium"
+            >Contacto</a
+          >
+        </div>
         <div>
           <a
             href="intranet.html"
@@ -441,7 +570,7 @@
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">Ubicación</h3>
                 <!-- Este es un mapa de Google Maps de ejemplo. Cambia el 'src' por el de tu ubicación -->
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.231261399066!2d-70.6482680847937!3d-33.44318998077699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6b7d7f7c5%3A0x26f5f9f0f9d9f5!2sPlaza%20de%20Armas%20de%20Santiago!5e0!3m2!1ses!2scl!4v1678886500000!5m2!1ses!2scl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.231261399066!2d-70.6482680847937!3d-33.44318998077699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6b7d7f7c5%3A0x26f5f9f0f9d9f5!2sPlaza%20de%2sArmas%20de%20Santiago!5e0!3m2!1ses!2scl!4v1678886500000!5m2!1ses!2scl"
                   width="100%"
                   height="250"
                   style="border: 0"
@@ -456,13 +585,6 @@
           </div>
         </div>
       </section>
-
-      <!-- 
-        ============================================================
-        SECCIÓN 6: INTRANET (SIMULACIÓN DE LOGIN)
-        ============================================================
-        -->
-      <!-- Esta sección se ha movido por completo a su propio archivo: intranet.html -->
     </main>
 
     <!-- 
@@ -482,20 +604,69 @@
 
     <!-- 
     ============================================================
-    SCRIPT PARA SCROLL SUAVE
+    ELEMENTOS DEL ASISTENTE VIRTUAL (CHATBOT)
+    ============================================================
+    -->
+
+    <!-- 1. El ícono de la burbuja -->
+    <div id="chatBubble" class="chat-bubble">
+      <i data-lucide="message-circle" class="text-white w-8 h-8"></i>
+    </div>
+
+    <!-- 2. La ventana del chat (oculta por defecto) -->
+    <div id="chatWindow" class="chat-window">
+      <!-- Encabezado del Chat -->
+      <div class="chat-header">
+        <div>
+          <h3 class="font-bold">AldoBot</h3>
+          <p class="text-sm text-blue-200">Asistente Virtual</p>
+        </div>
+        <button id="closeChat" class="text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Log de Mensajes -->
+      <div id="chatLog" class="chat-log">
+        <!-- Mensaje de bienvenida -->
+        <div class="chat-message-bot">
+          ¡Hola! Soy AldoBot, el asistente loquillo. Estoy aquí para ayudarte
+          con info sobre nuestros autos. ¿Qué te gustaría saber?
+        </div>
+      </div>
+
+      <!-- Input de Mensaje -->
+      <div class="chat-input">
+        <input
+          type="text"
+          id="chatInput"
+          placeholder="Escribe tu pregunta..."
+          class="w-full px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          id="sendChat"
+          class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700"
+        >
+          <i data-lucide="send" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 
+    ============================================================
+    SCRIPT PARA SCROLL SUAVE Y LOGICA DEL CHATBOT
     ============================================================
     -->
     <script>
-      // Script para el scroll suave
+      // Cargar todos los iconos de Lucide
+      lucide.createIcons();
+
+      // --- Script para el scroll suave ---
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
-          // Previene el salto brusco
           e.preventDefault();
-
-          // Obtiene el destino del enlace (ej: "#vehiculos")
           const targetId = this.getAttribute("href");
           const targetElement = document.querySelector(targetId);
-
           if (targetElement) {
             targetElement.scrollIntoView({
               behavior: "smooth",
@@ -504,7 +675,115 @@
         });
       });
 
-      // El script del formulario de login se ha movido a intranet.html
+      // --- Script para el Asistente Virtual (Chatbot) ---
+
+      // 1. Obtener elementos del DOM
+      const chatBubble = document.getElementById("chatBubble");
+      const chatWindow = document.getElementById("chatWindow");
+      const closeChat = document.getElementById("closeChat");
+      const sendChat = document.getElementById("sendChat");
+      const chatInput = document.getElementById("chatInput");
+      const chatLog = document.getElementById("chatLog");
+
+      // 2. Abrir y cerrar la ventana de chat
+      chatBubble.addEventListener("click", () => {
+        chatWindow.classList.add("open");
+      });
+
+      closeChat.addEventListener("click", () => {
+        chatWindow.classList.remove("open");
+      });
+
+      // 3. Lógica de envío de mensajes
+      sendChat.addEventListener("click", sendMessage);
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          sendMessage();
+        }
+      });
+
+      function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (messageText === "") return; // No enviar mensajes vacíos
+
+        // Añadir mensaje del usuario al log
+        appendMessage("user", messageText);
+        chatInput.value = ""; // Limpiar input
+
+        // Simular respuesta del bot
+        setTimeout(() => {
+          getBotResponse(messageText);
+        }, 700); // Pequeña demora para simular "pensamiento"
+      }
+
+      // 4. Añadir mensaje a la interfaz
+      function appendMessage(sender, text) {
+        const messageElement = document.createElement("div");
+        // Nota: usamos .textContent para seguridad (evitar inyección HTML)
+        messageElement.textContent = text;
+
+        if (sender === "user") {
+          messageElement.className = "chat-message-user";
+        } else {
+          messageElement.className = "chat-message-bot";
+        }
+
+        chatLog.appendChild(messageElement);
+
+        // Auto-scroll al fondo
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }
+
+      // 5. Lógica del Bot (Simulación de IA - Tarea 7)
+      function getBotResponse(userInput) {
+        const input = userInput.toLowerCase();
+        let response =
+          "No estoy seguro de entenderte. Mi especialidad son los autos no alquilados. ¿Quieres saber de nuestro stock disponible?";
+
+        // --- REGLAS DE LA SIMULACIÓN ---
+
+        if (
+          input.includes("hola") ||
+          input.includes("saludos") ||
+          input.includes("buenos días")
+        ) {
+          response =
+            "¡Hola! Bienvenido a la Automotora Aldo el Loquillo. ¿En qué te puedo ayudar hoy?";
+        }
+
+        // ESTA ES LA TAREA 7: "dar información especial o detallada sobre los autos no alquilados"
+        else if (
+          input.includes("disponible") ||
+          input.includes("no alquilado") ||
+          input.includes("catálogo") ||
+          input.includes("stock")
+        ) {
+          response =
+            '¡Excelente pregunta! Nuestros autos "No Alquilados" y listos para ti son el "Sedán Elegante" (30.000 Kms) y el "Hatchback Urbano" (55.000 Kms). ¿Te gustaría ver los detalles de alguno?';
+        } else if (input.includes("sedán") || input.includes("elegante")) {
+          response =
+            'El "Sedán Elegante" (2022) es una joyita. Tiene 30.000 Kms, único dueño y está a $15.000.000. ¡Perfecto para la ciudad y viajes!';
+        } else if (input.includes("hatchback") || input.includes("urbano")) {
+          response =
+            'El "Hatchback Urbano" (2020) es súper ágil. Tiene 55.000 Kms, es full equipo y está a $12.800.000. ¡Ideal para moverse por la ciudad!';
+        } else if (
+          input.includes("horario") ||
+          input.includes("dirección") ||
+          input.includes("ubicación")
+        ) {
+          response =
+            "Nuestra casa matriz está en Av. Siempre Viva 123, Concepción. Atendemos de Lun a Vie de 9:00 a 19:00 y Sáb de 10:00 a 14:00. ¡Te esperamos con un café!";
+        } else if (
+          input.includes("gracias") ||
+          input.includes("muchas gracias")
+        ) {
+          response =
+            "¡Un placer ayudarte! Si tienes otra duda, ¡aquí estaré! Atte. AldoBot.";
+        }
+
+        // Añadir respuesta del bot al log
+        appendMessage("bot", response);
+      }
     </script>
   </body>
 </html>
