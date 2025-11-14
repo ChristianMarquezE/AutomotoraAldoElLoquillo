@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotora Aldo el Loquillo - ¡Locos por los Autos!</title>
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carga de Fuente (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplicamos la fuente Inter como base */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Un pequeño truco para el fondo del Hero */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/333/FFF?text=Tu+Foto+de+Fondo+Aqui');
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- 
+    ============================================================
+    BARRA DE NAVEGACIÓN
+    ============================================================
+    -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <!-- FÁCIL DE EDITAR: Este enlace lleva al nuevo archivo intranet.html -->
+                <a href="intranet.html" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300">
+                    Intranet
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 
+        ============================================================
+        SECCIÓN 1: INICIO (HERO)
+        ============================================================
+        -->
+        <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-white text-center bg-cover bg-center">
+            <div class="max-w-2xl px-4">
+                <!-- FÁCIL DE EDITAR: Cambia este texto -->
+                <h1 class="text-5xl md:text-6xl font-black mb-4 tracking-tight">¡Precios de Locura, Cordura al Volante!</h1>
+                <p class="text-lg md:text-xl font-light mb-8">
+                    Bienvenido a la automotora donde la pasión por los autos es lo primero. 
+                    El único "loquillo" en el que puedes confiar para encontrar tu próximo vehículo.
+                </p>
+                <a href="#vehiculos" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition duration-300">
+                    Ver Catálogo
+                </a>
+            </div>
+        </section>
+
+        <!-- 
+        ============================================================
+        SECCIÓN 2: NOSOTROS (EL LOQUILLO)
+        ============================================================
+        -->
+        <section id="nosotros" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- FÁCIL DE EDITAR: Cambia la imagen de Aldo -->
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/E2E8F0/333?text=Foto+de+Aldo" alt="Aldo el Loquillo" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <!-- FÁCIL DE EDITAR: Cambia este texto -->
+                    <div class="md:w-1/2">
+                        <span class="text-blue-600 font-semibold">SOBRE NOSOTROS</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Conoce al "Loquillo" en Jefe</h2>
+                        <p class="text-gray-700 mb-4 text-lg">
+                            Hola, soy Aldo. Y sí, estoy un poco 'loquillo', ¡pero loco por los motores! 
+                            Mi locura no es venderte cualquier auto, es encontrar el auto <span class="font-bold">perfecto para ti</span>, 
+                            ese que te haga sonreír cada vez que lo enciendes.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Llevo 15 años en esto, y mi equipo comparte esta pasión. 
+                            No somos vendedores comunes; somos tus asesores, tus amigos en el mundo automotriz. 
+                            Aquí no hay letras chicas, solo buenos tratos y una atención honesta.
+                        </p>
+                        <a href="#contacto" class="text-blue-600 font-bold hover:underline">¡Ven a tomar un café y hablemos de autos!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        ============================================================
+        SECCIÓN 3: VEHÍCULOS
+        ============================================================
+        -->
+        <section id="vehiculos" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Nuestras Joyitas de Locura</h2>
+                    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                        Tenemos una selección que te hará girar la cabeza. Nuevos, usados y semi-nuevos, 
+                        todos inspeccionados por nuestro equipo.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- FÁCIL DE EDITAR: INICIO DE TARJETA DE AUTO (Copia y pégala para más autos) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <!-- Cambia la imagen del auto -->
+                        <img src="https://placehold.co/600x400/9CA3AF/FFF?text=Imagen+Auto+1" alt="Auto en venta" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- Cambia el nombre y tipo -->
+                            <span class="text-sm text-blue-600 font-semibold">SEDÁN | 2022</span>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Nombre del Vehículo 1</h3>
+                            <!-- Cambia el precio y km -->
+                            <p class="text-xl font-bold text-gray-700 mb-4">$15.000.000</p>
+                            <p class="text-gray-600 mb-4">30.000 Kms | Único Dueño</p>
+                            <a href="#" class="w-full text-center block bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: FIN DE TARJETA DE AUTO -->
+
+                    <!-- FÁCIL DE EDITAR: INICIO DE TARJETA DE AUTO -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <!-- Cambia la imagen del auto -->
+                        <img src="https://placehold.co/600x400/9CA3AF/FFF?text=Imagen+Auto+2" alt="Auto en venta" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- Cambia el nombre y tipo -->
+                            <span class="text-sm text-blue-600 font-semibold">SUV | 2023 | 0KM</span>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Nombre del Vehículo 2</h3>
+                            <!-- Cambia el precio y km -->
+                            <p class="text-xl font-bold text-gray-700 mb-4">$22.500.000</p>
+                            <p class="text-gray-600 mb-4">Nuevo | Entrega Inmediata</p>
+                            <a href="#" class="w-full text-center block bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: FIN DE TARJETA DE AUTO -->
+
+                    <!-- FÁCIL DE EDITAR: INICIO DE TARJETA DE AUTO -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                        <!-- Cambia la imagen del auto -->
+                        <img src="https://placehold.co/600x400/9CA3AF/FFF?text=Imagen+Auto+3" alt="Auto en venta" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- Cambia el nombre y tipo -->
+                            <span class="text-sm text-blue-600 font-semibold">HATCHBACK | 2020</span>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Nombre del Vehículo 3</h3>
+                            <!-- Cambia el precio y km -->
+                            <p class="text-xl font-bold text-gray-700 mb-4">$12.800.000</p>
+                            <p class="text-gray-600 mb-4">55.000 Kms | Full Equipo</p>
+                            <a href="#" class="w-full text-center block bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300">
+                                Ver Detalles
+                            </a>
+                        </div>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: FIN DE TARJETA DE AUTO -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        ============================================================
+        SECCIÓN 4: SERVICIOS
+        ============================================================
+        -->
+        <section id="servicios" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">No solo vendemos, te acompañamos</h2>
+                    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                        Una vez que eres cliente de Aldo, eres familia. 
+                        Te ayudamos con todo lo que tu auto necesita.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- FÁCIL DE EDITAR: Cambia este servicio -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Financiamiento a tu Medida</h3>
+                        <p class="text-gray-700">
+                            No dejes que los números te detengan. 
+                            Buscamos el crédito más 'cuerdo' para tu bolsillo. ¡Somos flexibles!
+                        </p>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: Cambia este servicio -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Servicio Técnico Experto</h3>
+                        <p class="text-gray-700">
+                            Nuestro taller está equipado para mantener tu joyita en perfecto estado. 
+                            Mecánicos apasionados, no solo empleados.
+                        </p>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: Cambia este servicio -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Tomamos tu Auto</h3>
+                        <p class="text-gray-700">
+                            ¿Quieres renovarte? Trae tu auto actual y te daremos la mejor tasación 
+                            de la ciudad para que lo dejes en parte de pago.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        ============================================================
+        SECCIÓN 5: CONTACTO
+        ============================================================
+        -->
+        <section id="contacto" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">¡Hablemos de Autos!</h2>
+                    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                        ¿Listo para tu próximo vehículo? ¿Tienes dudas? 
+                        Pasa por la automotora o envíanos un mensaje. El café corre por nuestra cuenta.
+                    </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 bg-white p-8 rounded-lg shadow-xl">
+                    <!-- FÁCIL DE EDITAR: Formulario de contacto -->
+                    <div class="w-full md:w-1/2">
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- FÁCIL DE EDITAR: Información de contacto y mapa -->
+                    <div class="w-full md:w-1/2">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Información de Contacto</h3>
+                            <p class="text-gray-700 mb-2"><strong>Dirección:</strong> Av. Siempre Viva 123, Tu Ciudad</p>
+                            <p class="text-gray-700 mb-2"><strong>Teléfono:</strong> +56 9 1234 5678</p>
+                            <p class="text-gray-700 mb-2"><strong>Email:</strong> contacto@aldoelloquillo.cl</p>
+                            <p class="text-gray-700"><strong>Horario:</strong> Lun a Vie: 9:00 - 19:00 | Sáb: 10:00 - 14:00</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Ubicación</h3>
+                            <!-- Este es un mapa de Google Maps de ejemplo. Cambia el 'src' por el de tu ubicación -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.231261399066!2d-70.6482680847937!3d-33.44318998077699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6b7d7f7c5%3A0x26f5f9f0f9d9f5!2sPlaza%20de%20Armas%20de%20Santiago!5e0!3m2!1ses!2scl!4v1678886500000!5m2!1ses!2scl" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-lg">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+        ============================================================
+        SECCIÓN 6: INTRANET (SIMULACIÓN DE LOGIN)
+        ============================================================
+        -->
+        <!-- Esta sección se ha movido por completo a su propio archivo: intranet.html -->
+    </main>
+
+    <!-- 
+    ============================================================
+    FOOTER (PIE DE PÁGINA)
+    ============================================================
+    -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Automotora Aldo el Loquillo. Todos los derechos reservados.</p>
+            <p>Una locura de sitio web hecho para tu proyecto.</p>
+        </div>
+    </footer>
+
+    <!-- 
+    ============================================================
+    SCRIPT PARA SCROLL SUAVE
+    ============================================================
+    -->
+    <script>
+        // Script para el scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Previene el salto brusco
+                e.preventDefault();
+
+                // Obtiene el destino del enlace (ej: "#vehiculos")
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // El script del formulario de login se ha movido a intranet.html
+    </script>
+
+</body>
+</html>
