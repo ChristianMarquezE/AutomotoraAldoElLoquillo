@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventario - Intranet Aldo</title>
+    <meta name="title" content="Intranet - Automotora Aldo el Loquillo" />
+    <meta
+      name="description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://automotora-aldo-el-loquillo.vercel.app/intranet.html"
+    />
+    <meta property="og:title" content="Automotora Aldo el Loquillo" />
+    <meta
+      property="og:description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/ChristianMarquezE/AutomotoraAldoElLoquillo/refs/heads/master/assets/icons/metatags.png"
+    />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://automotora-aldo-el-loquillo.vercel.app/intranet.html"
+    />
+    <meta property="twitter:title" content="Automotora Aldo el Loquillo" />
+    <meta
+      property="twitter:description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/ChristianMarquezE/AutomotoraAldoElLoquillo/refs/heads/master/assets/icons/metatags.png"
+    />
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Carga de Fuente (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Inicio de Iconos (COPIADOS DE TU ARCHIVO) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/./assets/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/./assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/./assets/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/./assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/./assets/icons/site.webmanifest" />
+    <!-- Fin de Iconos -->
+
+    <!-- Librería de iconos para la UI de la intranet -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+        <!-- 
+        ============================================================
+        BARRA LATERAL DE NAVEGACIÓN
+        ============================================================
+        -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col p-4">
+            <div class="text-2xl font-bold mb-8">
+                Aldo el <span class="text-blue-400">Loquillo</span>
+                <span class="block text-sm font-normal text-gray-400">Intranet</span>
+            </div>
+            
+            <nav class="flex-1 space-y-2">
+                <!-- Enlace Inactivo -->
+                <a href="dashboard.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <!-- Enlace Activo -->
+                <a href="inventario.html" class="flex items-center px-3 py-2 bg-blue-600 rounded-md text-white">
+                    <i data-lucide="car" class="w-5 h-5 mr-3"></i>
+                    Inventario
+                </a>
+                <!-- Enlace Inactivo -->
+                <a href="reportes.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 mr-3"></i>
+                    Reportes (Excel)
+                </a>
+            </nav>
+
+            <div class="mt-auto">
+                <a href="intranet.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="log-out" class="w-5 h-5 mr-3"></i>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- 
+        ============================================================
+        CONTENIDO PRINCIPAL
+        ============================================================
+        -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-900">Gestión de Inventario (BBDD Interna)</h1>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 flex items-center">
+                    <i data-lucide="plus" class="w-5 h-5 mr-2"></i>
+                    Agregar Vehículo
+                </button>
+            </div>
+
+            <!-- Tarea 2: BBDD dividida en capas -->
+            <p class="mb-6 text-gray-600">
+                Esta tabla representa la vista de la base de datos interna (`internal`). 
+                Desde aquí se actualizan los estados y se accede a la ficha de cada auto (Tarea 1).
+            </p>
+            
+            <!-- Tarea 6: Estados de cada vehículo -->
+            <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+                <table class="w-full min-w-[600px] table-auto">
+                    <thead class="border-b border-gray-200">
+                        <tr>
+                            <th class="text-left text-sm font-semibold text-gray-600 p-3">Vehículo (Temporada 2026)</th>
+                            <th class="text-left text-sm font-semibold text-gray-600 p-3">Patente</th>
+                            <th class="text-left text-sm font-semibold text-gray-600 p-3">Estado</th>
+                            <th class="text-left text-sm font-semibold text-gray-600 p-3">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <!-- Vehículo 1: No Alquilado -->
+                        <tr>
+                            <td class="p-3 font-medium text-gray-900">Sedán Elegante 2026</td>
+                            <td class="p-3 text-gray-700">RNG-01</td>
+                            <td class="p-3">
+                                <select class="border border-gray-300 rounded-lg px-2 py-1 text-sm">
+                                    <option selected>No Alquilado</option>
+                                    <option>Alquilado</option>
+                                    <option>Reservado</option>
+                                    <option>En Reparación</option>
+                                    <option>No Disponible</option>
+                                </select>
+                            </td>
+                            <td class="p-3">
+                                <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Ficha</button>
+                            </td>
+                        </tr>
+                        <!-- Vehículo 2: Alquilado -->
+                        <tr>
+                            <td class="p-3 font-medium text-gray-900">SUV Deportivo 2026</td>
+                            <td class="p-3 text-gray-700">RNG-02</td>
+                            <td class="p-3">
+                                <select class="border border-gray-300 rounded-lg px-2 py-1 text-sm">
+                                    <option>No Alquilado</option>
+                                    <option selected>Alquilado</option>
+                                    <option>Reservado</option>
+                                    <option>En Reparación</option>
+                                    <option>No Disponible</option>
+                                </select>
+                            </td>
+                            <td class="p-3">
+                                <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Ficha</button>
+                            </td>
+                        </tr>
+                        <!-- Vehículo 3: Reservado -->
+                        <tr>
+                            <td class="p-3 font-medium text-gray-900">Hatchback Urbano 2026</td>
+                            <td class="p-3 text-gray-700">RNG-03</td>
+                            <td class="p-3">
+                                <select class="border border-gray-300 rounded-lg px-2 py-1 text-sm">
+                                    <option>No Alquilado</option>
+                                    <option>Alquilado</option>
+                                    <option selected>Reservado</option>
+                                    <option>En Reparación</option>
+                                    <option>No Disponible</option>
+                                </select>
+                            </td>
+                            <td class="p-3">
+                                <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Ficha</button>
+                            </td>
+                        </tr>
+                        <!-- Vehículo 4: En Reparación -->
+                        <tr>
+                            <td class="p-3 font-medium text-gray-900">Camioneta 4x4 2026</td>
+                            <td class="p-3 text-gray-700">RNG-04</td>
+                            <td class="p-3">
+                                <select class="border border-gray-300 rounded-lg px-2 py-1 text-sm">
+                                    <option>No Alquilado</option>
+                                    <option>Alquilado</option>
+                                    <option>Reservado</option>
+                                    <option selected>En Reparación</option>
+                                    <option>No Disponible</option>
+                                </select>
+                            </td>
+                            <td class="p-3">
+                                <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Ficha</button>
+                            </td>
+                        </tr>
+                        <!-- Vehículo 5: No Disponible -->
+                        <tr>
+                            <td class="p-3 font-medium text-gray-900">Eléctrico Compacto 2026</td>
+                            <td class="p-3 text-gray-700">RNG-05</td>
+                            <td class="p-3">
+                                <select class="border border-gray-300 rounded-lg px-2 py-1 text-sm">
+                                    <option>No Alquilado</option>
+                                    <option>Alquilado</option>
+                                    <option>Reservado</option>
+                                    <option>En Reparación</option>
+                                    <option selected>No Disponible</option>
+                                </select>
+                            </td>
+                            <td class="p-3">
+                                <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Ficha</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script para cargar los iconos -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

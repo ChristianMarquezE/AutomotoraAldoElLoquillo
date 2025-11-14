@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Intranet Aldo</title>
+    <meta name="title" content="Intranet - Automotora Aldo el Loquillo" />
+    <meta
+      name="description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://automotora-aldo-el-loquillo.vercel.app/intranet.html"
+    />
+    <meta property="og:title" content="Automotora Aldo el Loquillo" />
+    <meta
+      property="og:description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/ChristianMarquezE/AutomotoraAldoElLoquillo/refs/heads/master/assets/icons/metatags.png"
+    />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://automotora-aldo-el-loquillo.vercel.app/intranet.html"
+    />
+    <meta property="twitter:title" content="Automotora Aldo el Loquillo" />
+    <meta
+      property="twitter:description"
+      content="Proyecto Metodologías de Desarrollo de Software AIEP ONLINE 1er año"
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/ChristianMarquezE/AutomotoraAldoElLoquillo/refs/heads/master/assets/icons/metatags.png"
+    />
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Carga de Fuente (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Inicio de Iconos (COPIADOS DE TU ARCHIVO) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/./assets/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/./assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/./assets/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/./assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/./assets/icons/site.webmanifest" />
+    <!-- Fin de Iconos -->
+
+    <!-- Librería de iconos para la UI de la intranet -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+        <!-- 
+        ============================================================
+        BARRA LATERAL DE NAVEGACIÓN
+        ============================================================
+        -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col p-4">
+            <div class="text-2xl font-bold mb-8">
+                Aldo el <span class="text-blue-400">Loquillo</span>
+                <span class="block text-sm font-normal text-gray-400">Intranet</span>
+            </div>
+            
+            <nav class="flex-1 space-y-2">
+                <!-- Enlace Activo -->
+                <a href="dashboard.html" class="flex items-center px-3 py-2 bg-blue-600 rounded-md text-white">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <!-- Enlace Inactivo -->
+                <a href="inventario.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="car" class="w-5 h-5 mr-3"></i>
+                    Inventario
+                </a>
+                <!-- Enlace Inactivo -->
+                <a href="reportes.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="file-spreadsheet" class="w-5 h-5 mr-3"></i>
+                    Reportes (Excel)
+                </a>
+            </nav>
+
+            <div class="mt-auto">
+                <a href="intranet.html" class="flex items-center px-3 py-2 text-gray-300 hover:bg-gray-700 rounded-md">
+                    <i data-lucide="log-out" class="w-5 h-5 mr-3"></i>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- 
+        ============================================================
+        CONTENIDO PRINCIPAL
+        ============================================================
+        -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6">Dashboard</h1>
+            
+            <!-- Resumen del Sprint 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-xl font-semibold mb-4">Progreso Sprint 2</h2>
+                <p class="text-gray-700">
+                    Bienvenido al panel de control. Desde aquí puedes acceder a las nuevas funcionalidades:
+                </p>
+                <ul class="list-disc list-inside mt-4 text-gray-600 space-y-2">
+                    <li>
+                        <span class="font-semibold">Gestión de Inventario:</span> Administra el catálogo de autos, sus estados y fichas detalladas. (Tareas 1, 2, 6)
+                    </li>
+                    <li>
+                        <span class="font-semibold">Generación de Reportes:</span> Exporta el estado de la flota a Excel. (Tarea 6)
+                    </li>
+                    <li>
+                        <span class="font-semibold">Asistente Virtual (en página pública):</span> Se implementará el chatbot para clientes. (Tarea 7)
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tarjetas de Resumen -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Vehículos Totales</h3>
+                    <p class="text-4xl font-bold text-gray-900">48</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Vehículos Alquilados</h3>
+                    <p class="text-4xl font-bold text-blue-600">12</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">En Reparación</h3>
+                    <p class="text-4xl font-bold text-red-600">3</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script para cargar los iconos -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
