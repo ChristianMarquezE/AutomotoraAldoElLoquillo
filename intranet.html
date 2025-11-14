@@ -82,7 +82,6 @@
     <!-- 
     ============================================================
     CONTENEDOR PRINCIPAL
-    Centra el formulario de login en la pantalla.
     ============================================================
     -->
     <div
@@ -91,7 +90,6 @@
       <div class="w-full max-w-md">
         <!-- Logo/Título -->
         <div class="text-center mb-8">
-          <!-- El logo/título enlaza de vuelta a la página principal -->
           <a
             href="index.html"
             class="text-3xl font-bold text-white hover:text-blue-400 transition duration-300"
@@ -103,9 +101,8 @@
         </div>
 
         <!-- 
-            FORMULARIO DE LOGIN
-            IMPORTANTE: Este formulario es solo visual (Front-End). 
-            -->
+        FORMULARIO DE LOGIN
+        -->
         <div class="bg-white text-gray-800 p-8 rounded-lg shadow-2xl">
           <form id="loginForm">
             <div class="mb-4">
@@ -118,6 +115,7 @@
                 name="username"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                value="empleado@aldo.cl"
               />
             </div>
             <div class="mb-6">
@@ -130,6 +128,7 @@
                 name="password"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                value="1234"
               />
             </div>
             <div>
@@ -156,19 +155,25 @@
 
     <!-- 
     ============================================================
-    SCRIPT DE SIMULACIÓN
+    SCRIPT DE SIMULACIÓN (ACTUALIZADO)
     ============================================================
     -->
     <script>
-      // Script para simular el login (solo para la demo)
-      // Muestra un mensaje simple al intentar ingresar.
+      // Script para simular el login y REDIRIGIR
       const loginForm = document.getElementById("loginForm");
       if (loginForm) {
         loginForm.addEventListener("submit", function (e) {
           e.preventDefault(); // Evita que la página se recargue
-          alert(
-            "¡Simulación de Login exitosa! \n(En un proyecto real, esto te llevaría a la intranet)."
-          );
+          
+          const button = e.target.querySelector('button');
+          button.textContent = 'Verificando...';
+          button.disabled = true;
+
+          // Simula una espera y luego redirige al dashboard
+          setTimeout(() => {
+            // Esta es la línea clave que te lleva al panel de control
+            window.location.href = 'dashboard.html';
+          }, 1000);
         });
       }
     </script>
